@@ -232,8 +232,8 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -293,6 +293,7 @@ a {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .device-glow {
@@ -302,8 +303,8 @@ a {
   transform: translate(-50%, -50%);
   width: 260px;
   height: 420px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(6, 182, 212, 0.25) 50%, transparent 75%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(6, 182, 212, 0.2) 50%, transparent 75%);
+  filter: blur(45px);
   z-index: 0;
   pointer-events: none;
 }
@@ -312,59 +313,59 @@ a {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 270px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
-  transition: transform 0.3s ease;
+  max-width: 260px;
+  background: #090d16;
+  padding: 8px;
+  border-radius: 42px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(124, 58, 237, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .device-screen-img {
   width: 100%;
   height: auto;
-  border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.8);
+  border-radius: 34px;
   display: block;
 }
 
 .device-mock:hover {
   transform: translateY(-4px);
+  box-shadow: 
+    0 25px 50px -10px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(124, 58, 237, 0.35);
 }
 
-/* Floating Badges */
 .floating-badge {
   position: absolute;
   z-index: 2;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 0.6rem 0.95rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-main);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 0.825rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
 }
 
 .badge-top {
-  top: 8%;
-  left: -40px;
-  animation: float-slow 4s ease-in-out infinite alternate;
+  top: 10%;
+  left: -20px;
+  border-color: rgba(139, 92, 246, 0.4);
 }
 
 .badge-bottom {
-  bottom: 10%;
-  right: -35px;
-  animation: float-slow 4s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes float-slow {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  bottom: 8%;
+  right: -20px;
+  border-color: rgba(6, 182, 212, 0.4);
 }
 
 /* Section Common Styling */
@@ -619,32 +620,6 @@ a {
 
   .features-grid {
     grid-template-columns: 1fr;
-  }
-
-  .device-mock {
-    max-width: 250px;
-  }
-
-  .badge-top {
-    left: -10px;
-  }
-
-  .badge-bottom {
-    right: -10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .floating-badge {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    animation: none;
-    margin: 0.5rem 0;
-    white-space: normal;
-    text-align: left;
   }
 }
 
