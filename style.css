@@ -234,7 +234,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .tagline-badge {
