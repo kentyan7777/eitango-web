@@ -317,6 +317,15 @@ a {
   transition: transform 0.3s ease;
 }
 
+.device-screen-img {
+  width: 100%;
+  height: auto;
+  border-radius: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
 .device-mock:hover {
   transform: translateY(-4px);
 }
