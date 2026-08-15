@@ -294,6 +294,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 65px;
+  margin: 0 auto;
 }
 
 .device-glow {
@@ -312,8 +314,7 @@ a {
 .device-mock {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 65px;
+  width: 65px;
   background: #090d16;
   padding: 8px;
   border-radius: 42px;
