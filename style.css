@@ -232,9 +232,10 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 65px;
   gap: 3rem;
   align-items: center;
+  justify-items: stretch;
 }
 
 .tagline-badge {
@@ -292,7 +293,7 @@ a {
 .hero-art {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 65px;
 }
@@ -615,6 +616,10 @@ a {
   }
 
   .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-art {
     justify-content: center;
   }
 
