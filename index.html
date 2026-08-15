@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eitango（エイタンゴ） | 究極のAI英語辞書＆あなた専用の超高速単語帳</title>
   <meta name="description" content="Eitango（エイタンゴ）は、究極のAI英語辞書であり、あなた専用の超高速単語帳です。単語を調べるだけで、語源・コアニュアンス・CEFR例文・ネイティブ音声などをAIが一瞬で提示。手動のカード作成不要で高速復習できます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div class="glow-bg"></div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#">Eitango<span class="dot">.</span></a>
+      <a class="brand" href="#">
+        <span class="brand-text">Eitango</span><span class="dot">.</span>
+      </a>
       <nav class="nav" id="nav">
         <a href="#features">3つの理由</a>
-        <a href="#recommended">おすすめの方</a>
+        <a href="#recommended">こんな方におすすめ</a>
         <a href="#download">ダウンロード</a>
         <a href="#contact">サポート</a>
-        <a class="btn btn-cta" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">App Store</a>
+        <a class="btn btn-appstore-sm" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-15 69.5-34.3z"/></svg>
+          App Store
+        </a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="ナビゲーションの切り替え">
         <span class="hamburger"></span>
@@ -30,8 +38,13 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="tagline-badge">調べると覚えるを、ひとつに。</div>
-          <h1>Eitango（エイタンゴ）は、<br>究極のAI英語辞書であり、<br>あなた専用の超高速単語帳です。</h1>
+          <div class="tagline-badge">
+            <span class="badge-icon">✨</span> 調べると覚えるを、ひとつに。
+          </div>
+          <h1>
+            究極の<span class="gradient-text">AI英語辞書</span>であり、<br>
+            あなた専用の<span class="gradient-text">超高速単語帳</span>
+          </h1>
           <p class="lead">
             英語ニュース、洋書、論文、海外ドラマ、TOEIC対策。<br>
             「わからない単語をネットで調べて、そのまま忘れてしまう」<br>
@@ -41,49 +54,98 @@
             Eitangoなら、単語を調べるだけで、学習に必要なすべてが自動で完結します。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-large" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">App Store でダウンロード</a>
-            <a class="btn btn-outline" href="#features">機能を見る</a>
+            <a class="btn btn-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-15 69.5-34.3z"/></svg>
+              <span>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+            <a class="btn btn-outline" href="#features">3つの理由を見る</a>
           </div>
         </div>
         <div class="hero-art">
+          <div class="device-glow"></div>
           <div class="device-mock">
-            <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eitango アプリプレビュー">
+            <svg viewBox="0 0 360 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eitango アプリ画面">
               <defs>
-                <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#7C3AED" />
-                  <stop offset="1" stop-color="#06B6D4" />
+                <linearGradient id="bg-grad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#1e1b4b" />
+                  <stop offset="50%" stop-color="#0f172a" />
+                  <stop offset="100%" stop-color="#0284c7" stop-opacity="0.2" />
+                </linearGradient>
+                <linearGradient id="card-grad" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#06b6d4" />
+                </linearGradient>
+                <linearGradient id="badge-grad" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#0284c7" stop-opacity="0.6" />
                 </linearGradient>
               </defs>
-              <rect x="10" y="10" width="340" height="700" rx="28" fill="#0f172a" />
-              <rect x="28" y="40" width="304" height="640" rx="20" fill="url(#g)" opacity="0.95" />
-              <g transform="translate(40,70)" fill="#fff" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto">
-                <!-- AI Search Header -->
-                <rect width="280" height="44" rx="10" fill="#fff" opacity="0.12" />
-                <text x="16" y="28" font-size="14" font-weight="600" opacity="0.9">🔍 AI 検索 &amp; 辞書</text>
+              <!-- Phone Outer Shell -->
+              <rect x="5" y="5" width="350" height="670" rx="44" fill="#030712" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+              <!-- Screen Area -->
+              <rect x="18" y="18" width="324" height="644" rx="34" fill="url(#bg-grad)" />
+              
+              <!-- Dynamic Island / Notch -->
+              <rect x="135" y="28" width="90" height="24" rx="12" fill="#000" />
+              
+              <!-- App Content -->
+              <g transform="translate(36,68)" fill="#fff" font-family="'Plus Jakarta Sans', 'Noto Sans JP', sans-serif">
                 
-                <!-- Word Card -->
-                <text x="16" y="80" font-size="30" font-weight="800">serendipity</text>
-                <text x="16" y="102" font-size="12" fill="#c4b5fd" font-weight="600">CEFR B2 • 語源: Serendip + ity</text>
+                <!-- Main Word Header -->
+                <text x="0" y="32" font-size="32" font-weight="800" fill="#ffffff" letter-spacing="-0.5">serendipity</text>
                 
-                <rect y="118" width="280" height="150" rx="12" fill="#fff" opacity="0.08" />
-                <text x="16" y="142" font-size="13" font-weight="700" fill="#06B6D4">コアニュアンス</text>
-                <text x="16" y="162" font-size="12" opacity="0.9">「思いがけない素晴らしい幸運な発見」</text>
+                <!-- Phonetic & Audio Badge -->
+                <g transform="translate(0, 44)">
+                  <text x="0" y="14" font-size="12" fill="#94a3b8" font-weight="500">/ˌser.ənˈdɪp.ə.ti/</text>
+                  <rect x="110" y="0" width="80" height="20" rx="10" fill="rgba(139,92,246,0.25)" border="1px solid rgba(139,92,246,0.4)" />
+                  <text x="120" y="13" font-size="10" font-weight="700" fill="#c4b5fd">🔊 CEFR B2</text>
+                </g>
                 
-                <text x="16" y="192" font-size="13" font-weight="700" fill="#06B6D4">AI生成CEFR例文</text>
-                <text x="16" y="210" font-size="11" opacity="0.9">Finding this book was pure serendipity.</text>
-                <text x="16" y="228" font-size="11" opacity="0.75">（この本を見つけたのはまさに偶然の幸運だった。）</text>
-                
-                <!-- Auto Stock Badge -->
-                <rect y="284" width="280" height="48" rx="10" fill="#7C3AED" opacity="0.4" />
-                <text x="16" y="313" font-size="13" font-weight="700">✨ 自動ストック: My単語帳に登録済</text>
+                <!-- Etymology Tag -->
+                <g transform="translate(0, 72)">
+                  <rect width="288" height="26" rx="6" fill="rgba(255,255,255,0.05)" />
+                  <text x="10" y="17" font-size="11" fill="#cbd5e1">語源: <tspan fill="#06b6d4">Serendip</tspan>（セイロン島の旧称）+ <tspan fill="#06b6d4">-ity</tspan></text>
+                </g>
 
-                <!-- 2s Sprint Box -->
-                <rect y="348" width="280" height="110" rx="12" fill="#fff" opacity="0.08" />
-                <text x="16" y="374" font-size="13" font-weight="700">⚡ 1単語2秒 スプリント復習</text>
-                <rect x="16" y="388" width="248" height="8" rx="4" fill="#fff" opacity="0.2" />
-                <rect x="16" y="388" width="180" height="8" rx="4" fill="#06B6D4" />
-                <text x="16" y="420" font-size="13" font-weight="600">1日300単語をサクサク回転！</text>
-                <text x="16" y="440" font-size="11" opacity="0.8">見た瞬間に意味が出る反射神経</text>
+                <!-- Core Nuance Card -->
+                <g transform="translate(0, 110)">
+                  <rect width="288" height="76" rx="14" fill="rgba(15,23,42,0.7)" stroke="rgba(139,92,246,0.3)" stroke-width="1" />
+                  <rect x="0" y="0" width="4" height="76" rx="2" fill="#8b5cf6" />
+                  <text x="16" y="24" font-size="11" font-weight="700" fill="#a78bfa" letter-spacing="0.5">コアニュアンス</text>
+                  <text x="16" y="48" font-size="13" font-weight="700" fill="#f8fafc">「ふとしたきっかけで訪れる幸運な発見」</text>
+                </g>
+
+                <!-- AI Example Card -->
+                <g transform="translate(0, 198)">
+                  <rect width="288" height="96" rx="14" fill="rgba(15,23,42,0.7)" stroke="rgba(6,182,212,0.3)" stroke-width="1" />
+                  <rect x="0" y="0" width="4" height="96" rx="2" fill="#06b6d4" />
+                  <text x="16" y="24" font-size="11" font-weight="700" fill="#38bdf8" letter-spacing="0.5">AI生成 CEFR例文</text>
+                  <text x="16" y="46" font-size="12" font-weight="600" fill="#f1f5f9">"Finding this paper was pure serendipity."</text>
+                  <text x="16" y="68" font-size="11" fill="#94a3b8">（この論文を発見できたのは完全な偶然の幸運だった。）</text>
+                </g>
+                
+                <!-- Auto Stock Status -->
+                <g transform="translate(0, 306)">
+                  <rect width="288" height="40" rx="10" fill="url(#badge-grad)" stroke="rgba(255,255,255,0.15)" />
+                  <text x="16" y="25" font-size="12" font-weight="700" fill="#ffffff">✨ 調べた単語を My単語帳に自動保存</text>
+                </g>
+
+                <!-- Sprint Review Section -->
+                <g transform="translate(0, 358)">
+                  <rect width="288" height="110" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" />
+                  <text x="16" y="28" font-size="12" font-weight="700" fill="#38bdf8">⚡ 1単語2秒 スプリント復習</text>
+                  
+                  <!-- Progress Bar -->
+                  <rect x="16" y="42" width="256" height="6" rx="3" fill="rgba(255,255,255,0.1)" />
+                  <rect x="16" y="42" width="192" height="6" rx="3" fill="url(#card-grad)" />
+                  
+                  <text x="16" y="72" font-size="13" font-weight="800" fill="#ffffff">1日 300 単語の超高速回転</text>
+                  <text x="16" y="92" font-size="11" fill="#94a3b8">見た瞬間に意味が出る「反射神経」をトレーニング</text>
+                </g>
+
               </g>
             </svg>
           </div>
@@ -91,63 +153,112 @@
       </div>
     </section>
 
+    <!-- 3 Reasons Section -->
     <section id="features" class="features container">
-      <h2 class="section-title">【 Eitangoが選ばれる3つの理由 】</h2>
-      <p class="section-sub">単語を調べるだけで、学習に必要なすべてが自動で完結します。</p>
+      <div class="section-header">
+        <div class="section-badge">FEATURES</div>
+        <h2 class="section-title">Eitangoが選ばれる3つの理由</h2>
+        <p class="section-sub">単語を調べるだけで、学習に必要なすべてが自動で完結します。</p>
+      </div>
+
       <div class="features-grid">
-        <article class="card">
-          <div class="feature-number">REASON 01</div>
-          <div class="card-icon">1. 🤖</div>
+        <article class="card feature-card">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">01</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><polygon points="11 8 13 11 11 14 9 11 11 8"></polygon></svg>
+            </div>
+          </div>
           <h3>単語検索は、Eitangoがすべてやる</h3>
           <p>単語を入力するだけで、語源・コアニュアンス・あなたのレベルに合わせたCEFR例文・文法解説・超高音質ネイティブ音声をAIが一瞬で提示。「なぜその意味になるのか」を本質から理解できます。</p>
         </article>
-        <article class="card">
-          <div class="feature-number">REASON 02</div>
-          <div class="card-icon">2. 📚</div>
+
+        <article class="card feature-card">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">02</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+          </div>
           <h3>調べた単語が、自動的にあなた専用の単語帳に</h3>
           <p>手動で単語カードを作る面倒な作業は一切不要。調べた単語は自動的にストックされ、あなただけの完全オリジナル単語帳へと成長します。</p>
         </article>
-        <article class="card">
-          <div class="feature-number">REASON 03</div>
-          <div class="card-icon">3. ⚡</div>
+
+        <article class="card feature-card">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">03</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+          </div>
           <h3>1単語2秒のスプリントで、出会った単語を高速復習</h3>
           <p>破綻しやすい複雑なスケジュール管理は不要。1単語2秒のテンポ良いスプリントで、1日300単語をサクサク回転。「圧倒的な接触頻度」で、見た瞬間に意味が出る反射神経を鍛えます。</p>
         </article>
       </div>
     </section>
 
-    <section id="recommended" class="how container">
-      <h2 class="section-title">【 こんな方におすすめ 】</h2>
-      <p class="section-sub">自分に必要な語彙を効率よく増やしたい方のためのアプリです。</p>
-      <ul class="target-list">
-        <li class="target-item">
-          <span class="target-icon">✓</span>
-          <div>洋書、英語ニュース、論文などを日常的に読む方</div>
-        </li>
-        <li class="target-item">
-          <span class="target-icon">✓</span>
-          <div>ネット検索で単語を調べっぱなしにしてしまう方</div>
-        </li>
-        <li class="target-item">
-          <span class="target-icon">✓</span>
-          <div>アプリや自作単語帳のカード作成に挫折した経験がある方</div>
-        </li>
-        <li class="target-item">
-          <span class="target-icon">✓</span>
-          <div>市販の単語帳を終え、自分に必要な未知語だけを効率よく増やしたい方</div>
-        </li>
-        <li class="target-item">
-          <span class="target-icon">✓</span>
-          <div>自然でクリアなネイティブ発音で単語を覚えたい方</div>
-        </li>
-      </ul>
+    <!-- Recommended Section -->
+    <section id="recommended" class="recommended container">
+      <div class="section-header">
+        <div class="section-badge">TARGET</div>
+        <h2 class="section-title">こんな方におすすめ</h2>
+        <p class="section-sub">自分に必要な語彙を効率よく増やしたい方のためのアプリです。</p>
+      </div>
+
+      <div class="target-grid">
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>洋書、英語ニュース、論文などを日常的に読む方</p>
+        </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>ネット検索で単語を調べっぱなしにしてしまう方</p>
+        </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>アプリや自作単語帳のカード作成に挫折した経験がある方</p>
+        </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>市販の単語帳を終え、自分に必要な未知語だけを効率よく増やしたい方</p>
+        </div>
+        <div class="target-card highlight-target">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>自然でクリアなネイティブ発音で単語を覚えたい方</p>
+        </div>
+      </div>
     </section>
 
+    <!-- Closing CTA Section -->
     <section id="download" class="closing-cta container">
-      <h3>もう、単語帳を手作りする必要も、<br>調べた単語を忘れることもありません。</h3>
-      <p class="section-lead">あなたの英語学習を、Eitangoで次のステージへ。</p>
-      <div class="download-cta" style="justify-content: center;">
-        <a class="btn btn-primary btn-large" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">App Store でダウンロード</a>
+      <div class="cta-inner">
+        <h2>
+          もう、単語帳を手作りする必要も、<br>
+          調べた単語を忘れることもありません。
+        </h2>
+        <p class="section-lead">あなたの英語学習を、Eitangoで次のステージへ。</p>
+        <div class="download-cta">
+          <a class="btn btn-appstore btn-large" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">
+            <svg width="26" height="26" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-15 69.5-34.3z"/></svg>
+            <span>
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -155,22 +266,23 @@
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
       <div class="brand-col">
-        <a class="brand" href="#">Eitango<span class="dot">.</span></a>
+        <a class="brand" href="#">
+          <span class="brand-text">Eitango</span><span class="dot">.</span>
+        </a>
         <p class="muted">調べる・覚えるをひとつにする、究極のAI英語辞書＆超高速単語帳</p>
       </div>
       <nav class="footer-nav">
         <a href="#features">3つの理由</a>
-        <a href="#recommended">おすすめの方</a>
+        <a href="#recommended">こんな方におすすめ</a>
         <a href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank" rel="noopener">App Store</a>
       </nav>
-      <div class="support-info" style="margin-top: 0;">
+      <div class="support-info">
         サポート連絡先: <a href="mailto:contact@eitango-app.com">contact@eitango-app.com</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile nav toggle
     (function(){
       const nav = document.getElementById('nav');
       const toggle = document.getElementById('navToggle');
@@ -178,22 +290,11 @@
         nav.classList.toggle('open');
         toggle.classList.toggle('open');
       });
-      // Close nav on link click (mobile)
       nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-        if(nav.classList.contains('open')){ nav.classList.remove('open'); toggle.classList.remove('open'); }
-      }));
-    })();
-  </script>
-</body>
-</html>
-      const toggle = document.getElementById('navToggle');
-      toggle.addEventListener('click', ()=>{
-        nav.classList.toggle('open');
-        toggle.classList.toggle('open');
-      });
-      // Close nav on link click (mobile)
-      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-        if(nav.classList.contains('open')){ nav.classList.remove('open'); toggle.classList.remove('open'); }
+        if(nav.classList.contains('open')){
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+        }
       }));
     })();
   </script>
