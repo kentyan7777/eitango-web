@@ -600,13 +600,17 @@ a {
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2.5rem;
   }
   
+  .hero-content h1 {
+    font-size: 1.85rem;
+  }
+
   .hero-description {
     border-left: none;
     padding-left: 0;
@@ -623,18 +627,12 @@ a {
     justify-content: center;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 1.85rem;
-  }
-
   .cta-inner h2 {
     font-size: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 
   .nav {
