@@ -292,10 +292,9 @@ a {
 .hero-art {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 65px;
-  margin: 0 auto;
 }
 
 .device-glow {
