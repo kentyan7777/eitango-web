@@ -534,8 +534,6 @@ a {
 
 .brand-col .muted {
   margin: 0.4rem 0 0;
-  font-size: 0.875rem;
-  color: var(--text-muted);
 }
 
 .footer-nav {
@@ -554,9 +552,12 @@ a {
   color: var(--text-main);
 }
 
+.brand-col .muted,
 .support-info {
   font-size: 0.875rem;
   color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .support-info a {
