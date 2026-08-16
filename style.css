@@ -816,31 +816,49 @@ a {
 }
 
 /* Legal / Specified Commercial Transactions Table */
+.table-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+}
+
 .legal-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
 }
 
 .legal-table th,
 .legal-table td {
-  padding: 1.2rem 1rem;
+  padding: 1.25rem 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   vertical-align: top;
   text-align: left;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.75;
+}
+
+.legal-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.legal-table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .legal-table th {
   width: 28%;
+  min-width: 180px;
   color: var(--text-main);
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(139, 92, 246, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: -0.2px;
 }
 
 .legal-table td {
-  color: #cbd5e1;
+  color: #e2e8f0;
 }
 
 .legal-table tr:last-child th,
@@ -849,10 +867,11 @@ a {
 }
 
 .legal-note {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
   display: block;
+  line-height: 1.6;
 }
 
 .legal-list {
@@ -869,6 +888,12 @@ a {
 }
 
 @media (max-width: 768px) {
+  .table-wrapper {
+    border: none;
+    background: transparent;
+    overflow: visible;
+  }
+
   .legal-table,
   .legal-table tbody,
   .legal-table tr,
@@ -879,23 +904,35 @@ a {
   }
 
   .legal-table tr {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+  }
+
+  .legal-table tr:nth-child(even) {
+    background: rgba(15, 23, 42, 0.6);
   }
 
   .legal-table tr:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .legal-table th {
-    padding: 1rem 0 0.25rem 0;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 0.5rem 0;
     background: transparent;
-    border-bottom: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.3);
     color: var(--accent-cyan);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
   }
 
   .legal-table td {
-    padding: 0.25rem 0 1rem 0;
+    padding: 0;
     border-bottom: none;
   }
 }
