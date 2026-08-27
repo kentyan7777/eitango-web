@@ -8,19 +8,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=13">
+  <link rel="stylesheet" href="./style.css?v=15">
 </head>
 <body>
   <div class="glow-bg"></div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#">
-        <span class="brand-text">Eitango</span><span class="dot">.</span>
-        <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
-      </a>
+      <div class="brand-group">
+        <a class="brand" href="#">
+          <span class="brand-text">Eitango</span><span class="dot">.</span>
+          <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
+        </a>
+        <details class="header-announcement">
+          <summary>お知らせ：バージョンアップ(バージョン 1.4.0)しました。</summary>
+          <div class="announcement-details">
+            <p>バージョンアップ内容</p>
+            <ul>
+              <li>入力時のスペルミスを自動提案する「AIスペル修正サジェスト」機能を追加</li>
+              <li>検索パフォーマンスおよび品詞切り替えの高速化</li>
+              <li>重複登録された単語のスマート統合機能を追加</li>
+              <li>ネイティブ音声のイントネーション向上と再生の安定化</li>
+              <li>iCloud同期および自動バックアップの強化</li>
+              <li>各種UIの改善および軽微な不具合の修正</li>
+            </ul>
+          </div>
+        </details>
+      </div>
       <nav class="nav" id="nav">
-        <a href="#features">3つの理由</a>
+        <a href="#features">4つの理由</a>
         <a href="#recommended">こんな方におすすめ</a>
         <a href="#download">ダウンロード</a>
         <a href="support.html">サポート</a>
@@ -43,16 +59,17 @@
             <span class="badge-icon">✨</span> 調べると覚えるを、ひとつに。
           </div>
           <h1>
-            究極の<span class="gradient-text">AI英語辞書</span>であり、<br>
-            あなた専用の<span class="gradient-text">超高速単語帳</span>
+            Eitangoは、<br>
+            単なる単語帳ではありません。
           </h1>
           <p class="lead">
-            英語ニュース、洋書、論文、海外ドラマ、TOEIC対策。<br>
-            「わからない単語をネットで調べて、そのまま忘れてしまう」<br>
-            そんな経験はありませんか？
+            あなた専属のAI辞書編纂者（Personal Lexicographer）であり、<br>
+            語彙を宇宙のように広げる知性拡張ツールです。
           </p>
           <p class="hero-description">
-            Eitangoなら、単語を調べるだけで、学習に必要なすべてが自動で完結します。
+            「誰かに押し付けられた単語リストを眺めては、途中で挫折してしまう...」そんな経験はありませんか？<br>
+            本当に身につく語彙は、あなたが洋書、海外ドラマ、英語論文、仕事のメール、TOEIC・英検の学習の中で「出会い、気になった単語」だけです。<br>
+            単語を入力した瞬間、AIが辞書・文法書・語源書を凌駕する深掘り解説を瞬時に展開。調べるだけで、あなただけの生涯の語彙宇宙が完成します。
           </p>
           <div class="hero-actions">
             <a class="btn btn-appstore" href="https://apps.apple.com/app/eitango-ai%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3/id6797157793" target="_blank" rel="noopener">
@@ -62,11 +79,11 @@
                 <strong>App Store</strong>
               </span>
             </a>
-            <a class="btn btn-outline" href="#features">3つの理由を見る</a>
+            <a class="btn btn-outline" href="#features">4つの理由を見る</a>
           </div>
         </div>
         <div class="hero-art">
-          <img src="./2.png?v=1" alt="Eitango アプリ画面" class="hero-img" />
+          <img src="./4.jpg?v=1" alt="Eitango アプリ画面" class="hero-img" />
           <p class="hero-img-caption">実際の表示画面です(iPhone17)</p>
         </div>
       </div>
@@ -76,7 +93,7 @@
     <section id="features" class="features container">
       <div class="section-header">
         <div class="section-badge">FEATURES</div>
-        <h2 class="section-title">Eitangoが選ばれる3つの理由</h2>
+        <h2 class="section-title">Eitangoが選ばれる4つの理由</h2>
         <p class="section-sub">単語を調べるだけで、学習に必要なすべてが自動で完結します。</p>
       </div>
 
@@ -89,8 +106,16 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><polygon points="11 8 13 11 11 14 9 11 11 8"></polygon></svg>
             </div>
           </div>
-          <h3>単語検索は、Eitangoがすべてやる</h3>
-          <p>単語を入力するだけで、語源・コアニュアンス・あなたのレベルに合わせたCEFR例文・文法解説・超高音質ネイティブ音声をAIが一瞬で提示。「なぜその意味になるのか」を本質から理解できます。</p>
+          <h3>AIによる圧倒的な多角解析・コアイメージ解説</h3>
+          <p>
+            単語を入力するだけで、AIが専門家レベルの解説を瞬時に生成。<br>
+            ・【コアイメージ】：丸暗記を不要にする、単語の根本的な空間・物理イメージを解説<br>
+            ・【厳密な文法属性】：他動詞[vt] / 自動詞[vi]、可算[C] / 不可算[U]を完全網羅<br>
+            ・【同形異音語の精密対応】：leadやtearなど意味で発音・品詞が変わる単語も正確なIPA（米語発音記号）で表示<br>
+            ・【3大文脈の例文】：「ビジネス」「日常会話」「アカデミック」の3つの実用例文を自動生成<br>
+            ・【類義語のニュアンス比較 &amp; コロケーション】：混同しやすい類語との決定的な違いや頻出前置詞を可視化<br>
+            ・【もしかして？タイポ修正】：スペルミスもAIが検知してワンタップで正しい単語へ
+          </p>
         </article>
 
         <article class="card feature-card">
@@ -101,8 +126,11 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
             </div>
           </div>
-          <h3>手持ちの単語リストをコピペするだけ。AIが極上の単語帳に全自動アップグレード</h3>
-          <p>スプレッドシート、ノートアプリ、メモ帳に書き溜めた英単語を貼り付けるだけ。AIが品詞・自然な例文・日本語訳・スタジオ品質のネイティブ音声を一瞬で全自動付与。手動で単語カードを作る面倒な作業はもう二度と必要ありません。</p>
+          <h3>直感と反射神経を鍛える「2.0秒スプリント学習」</h3>
+          <p>
+            小難しいアルゴリズムで復習スケジュールを管理する時間は、もう要りません。<br>
+            英単語の定着に魔法はなく、圧倒的なスピードで、何度も何度も浴びるように学習を回すことだけが、その手段です。Eitangoは、1分で30単語を脳に叩き込む最速の回転体験を提供します。
+          </p>
         </article>
 
         <article class="card feature-card">
@@ -113,8 +141,26 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
             </div>
           </div>
-          <h3>1単語2秒のスプリントで、出会った単語を高速復習</h3>
-          <p>破綻しやすい複雑なスケジュール管理は不要。1単語2秒のテンポ良いスプリントで、1日300単語をサクサク回転。「圧倒的な接触頻度」で、見た瞬間に意味が出る反射神経を鍛えます。</p>
+          <h3>完全オフライン動作</h3>
+          <p>
+            一度生成したデータや音声はオフラインでもサクサク動作。<br>
+            地下鉄や移動中でも通信量を気にせず学習できます。
+          </p>
+        </article>
+
+        <article class="card feature-card">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">04</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            </div>
+          </div>
+          <h3>高音質なネイティブ音声 &amp; バックグラウンド連続再生</h3>
+          <p>
+            高品質な音声合成（TTS）により、単語・発音記号・例文を自然なネイティブ発音で再生。<br>
+            画面を閉じた状態や移動中でも「連続再生」で効率的なリスニング・聞き流し学習が可能です。
+          </p>
         </article>
       </div>
     </section>
@@ -132,31 +178,31 @@
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>洋書、英語ニュース、論文などを日常的に読む方</p>
+          <p>「押し付けられた単語帳」の丸暗記に限界を感じている自律的学習者</p>
         </div>
         <div class="target-card">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>ネット検索で単語を調べっぱなしにしてしまう方</p>
+          <p>洋書、海外ニュース、英語論文、映画で出会った単語を深くモノにしたい方</p>
         </div>
         <div class="target-card">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>アプリや自作単語帳のカード作成に挫折した経験がある方</p>
+          <p>TOEIC / TOEFL / IELTS / 英検 / 大学受験で本質的な語彙力をつけたい方</p>
         </div>
         <div class="target-card">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>市販の単語帳を終え、自分に必要な未知語だけを効率よく増やしたい方</p>
+          <p>動詞の自他や名詞の可算・不可算、類義語の使い分けまで正確に把握したい方</p>
         </div>
         <div class="target-card highlight-target">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>自然でクリアなネイティブ発音で単語を覚えたい方</p>
+          <p>洗練された美しいデザイン（Sapphire Glass UI）で知的好奇心を満たしたい方</p>
         </div>
       </div>
     </section>
@@ -165,7 +211,7 @@
     <section id="download" class="closing-cta container">
       <div class="cta-inner">
         <p class="cta-sub-lead">
-          もう、単語帳を手作りする必要も、調べた単語を忘れることもありません。
+          分厚い辞書・文法書・語源書はもう必要ありません。
         </p>
         <h2 class="cta-heading">
           あなたの英語学習を、<br>
@@ -191,10 +237,10 @@
           <span class="brand-text">Eitango</span><span class="dot">.</span>
           <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
         </a>
-        <p class="muted">調べる・覚えるをひとつにする、究極のAI英語辞書＆超高速単語帳</p>
+        <p class="muted">調べる・覚えるをひとつにする、究極のAI英語辞書＆専属英語チューター</p>
       </div>
       <nav class="footer-nav">
-        <a href="#features">3つの理由</a>
+        <a href="#features">4つの理由</a>
         <a href="#recommended">こんな方におすすめ</a>
         <a href="support.html">サポート</a>
         <a href="privacy.html">プライバシーポリシー</a>

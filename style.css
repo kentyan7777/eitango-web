@@ -74,7 +74,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  min-height: 72px;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
 }
 
 .brand {
@@ -84,6 +86,77 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.brand-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.header-announcement {
+  position: relative;
+  max-width: min(520px, 55vw);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.header-announcement summary {
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s ease;
+}
+
+.header-announcement summary::-webkit-details-marker {
+  display: none;
+}
+
+.header-announcement summary::before {
+  content: '＋';
+  color: var(--accent-cyan);
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
+.header-announcement[open] summary::before {
+  content: '−';
+}
+
+.header-announcement summary:hover,
+.header-announcement summary:focus-visible {
+  color: var(--text-main);
+}
+
+.announcement-details {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 0;
+  z-index: 60;
+  width: min(390px, calc(100vw - 3rem));
+  padding: 1rem 1.15rem;
+  background: rgba(15, 23, 42, 0.97);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+}
+
+.announcement-details p {
+  margin: 0 0 0.55rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.announcement-details ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--text-muted);
+}
+
+.announcement-details li + li {
+  margin-top: 0.3rem;
 }
 
 .brand-icon {
@@ -585,16 +658,20 @@ a {
   backdrop-filter: blur(16px);
 }
 
+.cta-sub-lead,
+.cta-heading {
+  font-size: 2.5rem;
+}
+
 .cta-sub-lead {
-  font-size: 1.1rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 800;
   margin: 0 0 1rem;
-  line-height: 1.6;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
 }
 
 .cta-heading {
-  font-size: 2.5rem;
   font-weight: 800;
   margin: 0 0 2rem;
   line-height: 1.35;
@@ -711,12 +788,9 @@ a {
     margin: 0 auto;
   }
 
+  .cta-sub-lead,
   .cta-heading {
     font-size: 1.75rem;
-  }
-
-  .cta-sub-lead {
-    font-size: 0.95rem;
   }
 
   .features-grid {
@@ -726,7 +800,7 @@ a {
   .nav {
     position: fixed;
     right: 1.25rem;
-    top: 80px;
+    top: 104px;
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
