@@ -5,10 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eitango（エイタンゴ） | 究極のAI英語辞書＆あなた専用の超高速単語帳</title>
   <meta name="description" content="Eitango（エイタンゴ）は、究極のAI英語辞書であり、あなた専用の超高速単語帳です。単語を調べるだけで、語源・コアニュアンス・CEFR例文・ネイティブ音声などをAIが一瞬で提示。手動のカード作成不要で高速復習できます。" />
+
+  <!-- OGP / Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eitango-app.com/" />
+  <meta property="og:title" content="Eitango（エイタンゴ） | 究極のAI英語辞書＆あなた専用の超高速単語帳" />
+  <meta property="og:description" content="単語を入力した瞬間、AIがコアイメージ・厳密な文法・3大文脈例文を自動展開。あなた専用のAIラジオや2.0秒スプリント学習で、生涯の語彙資産を最速で構築。" />
+  <meta property="og:image" content="https://eitango-app.com/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eitango（エイタンゴ） | 究極のAI英語辞書＆あなた専用の超高速単語帳" />
+  <meta name="twitter:description" content="単語を調べるだけで、学習に必要なすべてが自動で完結。AI多角解析×パーソナルラジオ×高速スプリント単語帳。" />
+  <meta name="twitter:image" content="https://eitango-app.com/1.png" />
+
+  <!-- Favicon / Apple Touch Icon -->
+  <link rel="icon" href="./1.png?v=2" type="image/png" />
+  <link rel="apple-touch-icon" href="./1.png?v=2" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=15">
+  <link rel="stylesheet" href="./style.css?v=20">
 </head>
 <body>
   <div class="glow-bg"></div>
@@ -21,20 +37,38 @@
           <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
         </a>
         <details class="header-announcement">
-          <summary>お知らせ：バージョンアップ(バージョン 1.5.4)しました。</summary>
+          <summary>お知らせ：バージョンアップ(バージョン 1.5.5)しました。</summary>
           <div class="announcement-details">
             <p>バージョンアップ内容</p>
-            <ul>
-              <li>【高速AI検索の最適化】クラウドキャッシュ連携を強化し、単語検索の表示速度と安定性を大幅に向上させました。</li>
-              <li>【多品詞・多義語の登録体験の向上】同じ単語で複数の品詞や異なる意味（例: 予約する／記録するなど）がある場合、それぞれの意味を独立して単語帳に追加・管理できるようになりました。</li>
-              <li>【単語編集機能の安定性向上】単語の編集画面において、日本語入力や例文・メモのカスタマイズがよりスムーズかつ確実に行えるようUI構造を最適化しました。</li>
-              <li>【細かな不具合の修正とパフォーマンス改善】全体の動作安定性を向上させました。</li>
-            </ul>
+            <ol>
+              <li>辞書情報が「完全版」へ進化
+                <ul>
+                  <li>【新搭載】SVOC文法構造解析: 例文の文法構造（S/V/O/Cや修飾関係）の解説を全単語に拡大しました。</li>
+                  <li>【完全網羅】3大 場面別例文: 「ビジネス」「日常会話」「アカデミック」の場面別例文と「前置詞・コロケーションマップ」を全単語に拡大し、実践的な使い分けがさらに深く学べます。</li>
+                </ul>
+              </li>
+              <li>スマート誤字・非標準語ナビゲーション（新設計）
+                <ul>
+                  <li>誤学習を防ぐため、スッキリとした「もしかして提案カード」へ刷新。正しい標準英語（例:ethnical→ethnic）へワンタップでスムーズに切り替えられます。</li>
+                </ul>
+              </li>
+              <li>検索画面 UI の洗練
+                <ul>
+                  <li>長くなりがちだった詳細解説をスッキリとした「折りたたみアコーディオン（件数バッジ付き）」に変更し、知りたい情報だけをスムーズに展開できるようにしました。</li>
+                  <li>検索欄のデザインをブラッシュアップし、視認性を向上させました。</li>
+                </ul>
+              </li>
+              <li>パフォーマンス・安定性の向上
+                <ul>
+                  <li>検索レスポンスのさらなる高速化と、内部処理の最適化を行いました。</li>
+                </ul>
+              </li>
+            </ol>
           </div>
         </details>
       </div>
       <nav class="nav" id="nav">
-        <a href="#features">4つの理由</a>
+        <a href="#features">6つの理由</a>
         <a href="#recommended">こんな方におすすめ</a>
         <a href="#download">ダウンロード</a>
         <a href="support.html">サポート</a>
@@ -77,11 +111,11 @@
                 <strong>App Store</strong>
               </span>
             </a>
-            <a class="btn btn-outline" href="#features">4つの理由を見る</a>
+            <a class="btn btn-outline" href="#features">6つの理由を見る</a>
           </div>
         </div>
         <div class="hero-art">
-          <img src="./4.jpg?v=1" alt="Eitango アプリ画面" class="hero-img" />
+          <img src="./5.png?v=1" alt="Eitango アプリ画面" class="hero-img" />
           <p class="hero-img-caption">実際の表示画面です(iPhone17)</p>
         </div>
       </div>
@@ -91,7 +125,7 @@
     <section id="features" class="features container">
       <div class="section-header">
         <div class="section-badge">FEATURES</div>
-        <h2 class="section-title">Eitangoが選ばれる4つの理由</h2>
+        <h2 class="section-title">Eitangoが選ばれる6つの理由</h2>
         <p class="section-sub">単語を調べるだけで、学習に必要なすべてが自動で完結します。</p>
       </div>
 
@@ -114,6 +148,7 @@
             ・【類義語のニュアンス比較 &amp; コロケーション】：混同しやすい類語との決定的な違いや頻出前置詞を可視化<br>
             ・【もしかして？タイポ修正】：スペルミスもAIが検知してワンタップで正しい単語へ
           </p>
+          <img class="feature-hover-image" src="./a1.png" alt="AI多角解析のイメージ" />
         </article>
 
         <article class="card feature-card">
@@ -129,6 +164,7 @@
             小難しいアルゴリズムで復習スケジュールを管理する時間は、もう要りません。<br>
             英単語の定着に魔法はなく、圧倒的なスピードで、何度も何度も浴びるように学習を回すことだけが、その手段です。Eitangoは、1分で30単語を脳に叩き込む最速の回転体験を提供します。
           </p>
+          <img class="feature-hover-image" src="./b2.png" alt="スプリント学習のイメージ" />
         </article>
 
         <article class="card feature-card">
@@ -136,20 +172,45 @@
           <div class="feature-header">
             <span class="reason-tag">03</span>
             <div class="icon-wrapper">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0"></path><path d="M7 12a5 5 0 0 1 10 0"></path><path d="M9 12a3 3 0 0 1 6 0"></path><circle cx="12" cy="12" r="1"></circle><path d="M4 18c1.5-2.5 4-3.5 8-3.5s6.5 1 8 3.5"></path></svg>
             </div>
           </div>
-          <h3>完全オフライン動作</h3>
+          <h3>弱点単語で毎日届く「パーソナライズドAIラジオ」</h3>
           <p>
-            一度生成したデータや音声はオフラインでもサクサク動作。<br>
-            地下鉄や移動中でも通信量を気にせず学習できます。
+            弱点単語で毎日届く、あなた専用の「パーソナライズドAIラジオ」<br>
+            単なる機械的な単語の棒読みは、もう終わりです。<br>
+            AIがあなたの単語帳から「未暗記・苦手な単語」を自動抽出し、ネイティブスピーカー2名（Alex &amp; Sarah）による1.5分の洗練された英語対談番組（ポッドキャスト）を日替わりで自動生成します。<br>
+            ・【文脈で覚えるリアルな会話】：覚えるべき単語が、自然な日常会話・知的なトークの中に無理なく織り交ぜられて登場<br>
+            ・【時間帯に合わせた演出】：朝のモチベーション、昼のカフェブレイク、夜のリラックスタイムなど、時間帯に合わせた心地よいトーンでお届け<br>
+            ・【究極の「ながら聞き」】：通勤・通学、家事、散歩の時間が、あなた専用の生きたリスニング＆語彙強化タイムへ
           </p>
+          <img class="feature-hover-image" src="./a2.png" alt="AIラジオのイメージ" />
+        </article>
+
+        <article class="card feature-card feature-card-stack">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">04</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path><path d="M12 6.5V8"></path><path d="M8 4h8"></path><path d="M7 22l-2-2"></path><path d="M17 22l2-2"></path></svg>
+            </div>
+          </div>
+          <h3>ロック画面・Spotlightと繋がる「極限のiOSネイティブ体験」</h3>
+          <p>
+            「アプリを開く」というわずかな手間すらゼロへ。iPhoneの最新機能をフル活用し、日常のあらゆる瞬間に単語学習が自然と溶け込みます。<br>
+            ・【Live Activities &amp; Dynamic Island】：アプリを閉じても、ロック画面や画面上部（Dynamic Island）でスプリント学習の進行や単語確認が可能<br>
+            ・【iOS Spotlight検索】：iPhoneのホーム画面検索バーに単語を打ち込むだけで、あなたの単語帳内の解説をダイレクトに引き出し<br>
+            ・【ホーム画面ウィジェット &amp; ショートカット】：常に目に入る場所に今日の単語を配置し、学習の習慣化を強力にアシスト
+          </p>
+          <img class="feature-hover-image feature-hover-image-1" src="./a3.png" alt="iOSネイティブ体験のイメージ" />
+          <img class="feature-hover-image feature-hover-image-2" src="./a4.png" alt="音声再生のイメージ" />
+          <img class="feature-hover-image feature-hover-image-3" src="./a5.png" alt="オフライン学習のイメージ" />
         </article>
 
         <article class="card feature-card">
           <div class="card-glow"></div>
           <div class="feature-header">
-            <span class="reason-tag">04</span>
+            <span class="reason-tag">05</span>
             <div class="icon-wrapper">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
             </div>
@@ -160,6 +221,21 @@
             画面を閉じた状態や移動中でも「連続再生」で効率的なリスニング・聞き流し学習が可能です。
           </p>
         </article>
+
+        <article class="card feature-card">
+          <div class="card-glow"></div>
+          <div class="feature-header">
+            <span class="reason-tag">06</span>
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+          </div>
+          <h3>完全オフライン動作</h3>
+          <p>
+            一度生成したデータや音声はオフラインでもサクサク動作。<br>
+            地下鉄や移動中でも通信量を気にせず学習できます。
+          </p>
+        </article>
       </div>
     </section>
 
@@ -168,7 +244,7 @@
       <div class="section-header">
         <div class="section-badge">TARGET</div>
         <h2 class="section-title">こんな方におすすめ</h2>
-        <p class="section-sub">自分に必要な語彙を効率よく増やしたい方のためのアプリです。</p>
+        <p class="section-sub">自分に必要な語彙だけを、最速かつ一生モノの資産にしたい方のためのアプリです。</p>
       </div>
 
       <div class="target-grid">
@@ -182,13 +258,25 @@
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>洋書、海外ニュース、英語論文、映画で出会った単語を深くモノにしたい方</p>
+          <p>洋書、海外ニュース、英語論文、映画・ドラマで出会った単語を深くモノにしたい方</p>
         </div>
         <div class="target-card">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>TOEIC / TOEFL / IELTS / 英検 / 大学受験で本質的な語彙力をつけたい方</p>
+          <p>TOEIC / TOEFL / IELTS / 英検 / 大学受験で本質的な語彙力を伸ばしたい方</p>
+        </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>英語のビジネスメールや商談で、正しい文脈・ニュアンスの使い分けを身につけたい社会人</p>
+        </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>通勤・通学や家事などの移動時間を、自分専用の「AIラジオ・耳学習」に変えたい方</p>
         </div>
         <div class="target-card">
           <div class="check-icon">
@@ -196,11 +284,39 @@
           </div>
           <p>動詞の自他や名詞の可算・不可算、類義語の使い分けまで正確に把握したい方</p>
         </div>
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>机に向かう時間がなくても、iPhoneのロック画面やスキマ時間で最速の回転学習をしたい方</p>
+        </div>
         <div class="target-card highlight-target">
           <div class="check-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
           </div>
-          <p>洗練された美しいデザイン（Sapphire Glass UI）で知的好奇心を満たしたい方</p>
+          <p>洗練された美しいデザイン（Sapphire Glass UI）で日々の知的好奇心を満たしたい方</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing container">
+      <div class="section-header">
+        <div class="section-badge">PLAN</div>
+        <h2 class="section-title">基本機能は無料でお試しいただけます</h2>
+      </div>
+
+      <div class="target-grid">
+        <div class="target-card">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>Freeプラン: 1日5単語までのAI深掘り検索・スプリント学習・オフライン動作を無料体験</p>
+        </div>
+        <div class="target-card highlight-target">
+          <div class="check-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p>Proプラン（月額500円）: 無制限のAI検索、毎日のパーソナライズドAIラジオ、無制限の単語登録</p>
         </div>
       </div>
     </section>
@@ -238,7 +354,7 @@
         <p class="muted">調べる・覚えるをひとつにする、究極のAI英語辞書＆専属英語チューター</p>
       </div>
       <nav class="footer-nav">
-        <a href="#features">4つの理由</a>
+        <a href="#features">6つの理由</a>
         <a href="#recommended">こんな方におすすめ</a>
         <a href="support.html">サポート</a>
         <a href="privacy.html">プライバシーポリシー</a>

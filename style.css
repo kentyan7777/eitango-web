@@ -548,6 +548,102 @@ a {
   border-color: var(--card-hover-border);
   transform: translateY(-5px);
   box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
+  z-index: 50;
+}
+
+/* Dim card text slightly on hover so floating preview image stands out clearly on top */
+.feature-card > h3,
+.feature-card > p {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.feature-card:hover > h3,
+.feature-card:hover > p {
+  opacity: 0.35;
+  filter: blur(0.5px);
+}
+
+/* Large Floating Preview Image Overlay */
+.feature-hover-image {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 310px;
+  max-width: 85%;
+  border-radius: 18px;
+  opacity: 0;
+  transform: translate(0, -40%) scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.85), 0 0 0 2px rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 100;
+  filter: saturate(1.25) contrast(1.15) brightness(1.05);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.feature-card:hover .feature-hover-image {
+  opacity: 1;
+  transform: translate(0, -50%) scale(1.08);
+}
+
+/* 04 Card Stack - 3 Large Distinct Screenshots */
+.feature-card-stack .feature-hover-image {
+  width: 180px;
+  max-width: 52%;
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95), 0 0 0 2px rgba(255, 255, 255, 0.45);
+  filter: saturate(1.25) contrast(1.18) brightness(1.08);
+}
+
+.feature-card-stack .feature-hover-image-1 {
+  left: 0.15rem;
+  right: auto;
+  top: 52%;
+  z-index: 101;
+  transform: translate(0, -25%) scale(0.85) rotate(-8deg);
+}
+
+.feature-card-stack .feature-hover-image-2 {
+  left: 50%;
+  right: auto;
+  top: 48%;
+  z-index: 102;
+  transform: translate(-50%, -25%) scale(0.9) rotate(0deg);
+}
+
+.feature-card-stack .feature-hover-image-3 {
+  right: 0.15rem;
+  left: auto;
+  top: 52%;
+  z-index: 103;
+  transform: translate(0, -25%) scale(0.85) rotate(8deg);
+}
+
+.feature-card-stack:hover .feature-hover-image-1 {
+  opacity: 1;
+  transform: translate(0, -54%) scale(1.1) rotate(-8deg);
+  transition-delay: 0ms;
+}
+
+.feature-card-stack:hover .feature-hover-image-2 {
+  opacity: 1;
+  transform: translate(-50%, -64%) scale(1.18) rotate(0deg);
+  transition-delay: 700ms;
+}
+
+.feature-card-stack:hover .feature-hover-image-3 {
+  opacity: 1;
+  transform: translate(0, -54%) scale(1.1) rotate(8deg);
+  transition-delay: 1400ms;
+}
+
+.feature-card > *:not(.feature-hover-image) {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .feature-header {
