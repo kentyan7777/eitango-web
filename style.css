@@ -149,14 +149,31 @@ a {
   font-weight: 700;
 }
 
+.announcement-details p.announcement-lead {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
 .announcement-details ul {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--text-muted);
 }
 
+.announcement-details ul ul {
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+}
+
 .announcement-details li + li {
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.announcement-details ul ul li + li {
+  margin-top: 0.25rem;
 }
 
 .brand-icon {
