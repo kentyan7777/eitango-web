@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=22">
+  <link rel="stylesheet" href="./style.css?v=23">
 </head>
 <body>
   <div class="glow-bg"></div>
@@ -408,25 +408,51 @@
       const stickyCta = document.getElementById('stickyCta');
       if (stickyCta) {
         let scrollTimeout = null;
+        let isTouching = false;
 
-        const handleScroll = () => {
-          // Hide immediately while actively scrolling
+        const showCta = () => {
+          if (!isTouching && window.scrollY > 150) {
+            stickyCta.classList.add('visible');
+          }
+        };
+
+        const hideCta = () => {
           stickyCta.classList.remove('visible');
+        };
 
-          // Clear existing timer
+        const onScrollActivity = () => {
+          hideCta();
           if (scrollTimeout) {
             clearTimeout(scrollTimeout);
           }
-
-          // Show CTA when scrolling has stopped for 300ms (and not at top)
-          scrollTimeout = setTimeout(() => {
-            if (window.scrollY > 200) {
-              stickyCta.classList.add('visible');
-            }
-          }, 300);
+          scrollTimeout = setTimeout(showCta, 250);
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('touchstart', () => {
+          isTouching = true;
+          hideCta();
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+        }, { passive: true });
+
+        window.addEventListener('touchmove', () => {
+          isTouching = true;
+          hideCta();
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+          isTouching = false;
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(showCta, 250);
+        }, { passive: true });
+
+        window.addEventListener('scroll', onScrollActivity, { passive: true });
+        window.addEventListener('wheel', onScrollActivity, { passive: true });
+
+        // Initial check if page is already scrolled on load
+        if (window.scrollY > 150) {
+          scrollTimeout = setTimeout(showCta, 400);
+        }
       }
     })();
   </script>

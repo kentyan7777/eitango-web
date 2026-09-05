@@ -1354,13 +1354,15 @@ a {
     transform: translateY(120%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+    will-change: transform, opacity;
   }
 
   .sticky-bottom-cta.visible {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
   }
 
   .sticky-btn-appstore {
