@@ -410,6 +410,8 @@
         let scrollTimeout = null;
         let isTouching = false;
 
+        const DELAY_MS = 2000;
+
         const showCta = () => {
           if (!isTouching && window.scrollY > 150) {
             stickyCta.classList.add('visible');
@@ -425,7 +427,7 @@
           if (scrollTimeout) {
             clearTimeout(scrollTimeout);
           }
-          scrollTimeout = setTimeout(showCta, 250);
+          scrollTimeout = setTimeout(showCta, DELAY_MS);
         };
 
         window.addEventListener('touchstart', (e) => {
@@ -447,7 +449,7 @@
           if (stickyCta.contains(e.target)) return;
           isTouching = false;
           if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(showCta, 250);
+          scrollTimeout = setTimeout(showCta, DELAY_MS);
         }, { passive: true });
 
         window.addEventListener('scroll', onScrollActivity, { passive: true });
@@ -455,7 +457,7 @@
 
         // Initial check if page is already scrolled on load
         if (window.scrollY > 150) {
-          scrollTimeout = setTimeout(showCta, 400);
+          scrollTimeout = setTimeout(showCta, DELAY_MS);
         }
       }
     })();
