@@ -450,10 +450,12 @@ a {
 }
 
 .lead {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin: 0 0 1.25rem;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.2px;
 }
 
 .hero-description {
@@ -877,6 +879,11 @@ a {
   
   .hero-content h1 {
     font-size: 1.85rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-description {
