@@ -88,94 +88,6 @@ a {
   gap: 0.5rem;
 }
 
-.brand-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
-}
-
-.header-announcement {
-  position: relative;
-  max-width: min(520px, 55vw);
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  line-height: 1.4;
-}
-
-.header-announcement summary {
-  cursor: pointer;
-  list-style: none;
-  transition: color 0.2s ease;
-}
-
-.header-announcement summary::-webkit-details-marker {
-  display: none;
-}
-
-.header-announcement summary::before {
-  content: '＋';
-  color: var(--accent-cyan);
-  font-weight: 700;
-  margin-right: 0.25rem;
-}
-
-.header-announcement[open] summary::before {
-  content: '−';
-}
-
-.header-announcement summary:hover,
-.header-announcement summary:focus-visible {
-  color: var(--text-main);
-}
-
-.announcement-details {
-  position: absolute;
-  top: calc(100% + 0.65rem);
-  left: 0;
-  z-index: 60;
-  width: min(390px, calc(100vw - 3rem));
-  padding: 1rem 1.15rem;
-  background: rgba(15, 23, 42, 0.97);
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  border-radius: var(--radius-md);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(16px);
-}
-
-.announcement-details p {
-  margin: 0 0 0.55rem;
-  color: var(--text-main);
-  font-weight: 700;
-}
-
-.announcement-details p.announcement-lead {
-  color: var(--text-muted);
-  font-weight: 400;
-  font-size: 0.72rem;
-  line-height: 1.5;
-  margin-bottom: 0.65rem;
-}
-
-.announcement-details ul {
-  margin: 0;
-  padding-left: 1.15rem;
-  color: var(--text-muted);
-}
-
-.announcement-details ul ul {
-  margin-top: 0.25rem;
-  padding-left: 1rem;
-}
-
-.announcement-details li + li {
-  margin-top: 0.4rem;
-}
-
-.announcement-details ul ul li + li {
-  margin-top: 0.25rem;
-}
-
 .brand-icon {
   width: 28px;
   height: 28px;
@@ -491,9 +403,10 @@ a {
     0 20px 40px -10px rgba(0, 0, 0, 0.6),
     0 0 30px rgba(124, 58, 237, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.hero-img:hover {
+.hero-img:not(.dismiss-hover):hover {
   transform: translateY(-4px);
   box-shadow: 
     0 25px 50px -10px rgba(0, 0, 0, 0.7),
@@ -563,7 +476,7 @@ a {
   flex-direction: column;
 }
 
-.feature-card:hover {
+.feature-card:not(.dismiss-hover):hover {
   border-color: var(--card-hover-border);
   transform: translateY(-5px);
   box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
@@ -576,8 +489,8 @@ a {
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.feature-card:hover > h3,
-.feature-card:hover > p {
+.feature-card:not(.dismiss-hover):hover > h3,
+.feature-card:not(.dismiss-hover):hover > p {
   opacity: 0.35;
   filter: blur(0.5px);
 }
@@ -602,9 +515,11 @@ a {
   background: rgba(15, 23, 42, 0.95);
 }
 
-.feature-card:hover .feature-hover-image {
+.feature-card:not(.dismiss-hover):hover .feature-hover-image {
   opacity: 1;
   transform: translate(0, -50%) scale(1.08);
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 /* 04 Card Stack - 3 Large Distinct Screenshots */
@@ -641,22 +556,32 @@ a {
   transform: translate(0, -25%) scale(0.85) rotate(8deg);
 }
 
-.feature-card-stack:hover .feature-hover-image-1 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-1 {
   opacity: 1;
   transform: translate(0, -54%) scale(1.1) rotate(-8deg);
   transition-delay: 0ms;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
-.feature-card-stack:hover .feature-hover-image-2 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-2 {
   opacity: 1;
   transform: translate(-50%, -64%) scale(1.18) rotate(0deg);
   transition-delay: 700ms;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
-.feature-card-stack:hover .feature-hover-image-3 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-3 {
   opacity: 1;
   transform: translate(0, -54%) scale(1.1) rotate(8deg);
   transition-delay: 1400ms;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.feature-card.dismiss-hover .feature-hover-image {
+  transition-delay: 0ms !important;
 }
 
 .feature-card > *:not(.feature-hover-image) {
@@ -1351,18 +1276,9 @@ a {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
     z-index: 999;
-    transform: translateY(120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
-    will-change: transform, opacity;
-  }
-
-  .sticky-bottom-cta.visible {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out;
   }
 
   .sticky-btn-appstore {

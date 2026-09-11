@@ -24,31 +24,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=24">
+  <link rel="stylesheet" href="./style.css?v=27">
 </head>
 <body>
   <div class="glow-bg"></div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand-group">
-        <a class="brand" href="#">
-          <span class="brand-text">Eitango</span><span class="dot">.</span>
-          <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
-        </a>
-        <details class="header-announcement">
-          <summary>お知らせ：バージョンアップ(バージョン 1.6.6)しました。</summary>
-          <div class="announcement-details">
-            <p>【更新内容】</p>
-            <ul>
-              <li>音声再生時のレスポンスとパフォーマンスを最適化しました。</li>
-              <li>多義語や品詞別タブの表示切り替えを改善し、学習効率を高めました。</li>
-              <li>検索結果の表示デザインを一部改善しました。</li>
-              <li>通信の安定性向上および軽微な不具合の修正を行いました。</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+      <a class="brand" href="#">
+        <span class="brand-text">Eitango</span><span class="dot">.</span>
+        <img src="./1.png?v=2" alt="Eitango アプリアイコン" class="brand-icon" />
+      </a>
       <nav class="nav" id="nav">
         <a href="#features">6つの理由</a>
         <a href="#recommended">こんな方におすすめ</a>
@@ -393,61 +379,33 @@
         }
       }));
 
-      // Scroll stop detection for sticky bottom CTA
-      const stickyCta = document.getElementById('stickyCta');
-      if (stickyCta) {
-        let scrollTimeout = null;
-        let isTouching = false;
-
-        const DELAY_MS = 7000;
-
-        const showCta = () => {
-          if (!isTouching && window.scrollY > 150) {
-            stickyCta.classList.add('visible');
+      // Hover dismiss on image click
+      const featureHoverImages = document.querySelectorAll('.feature-hover-image');
+      featureHoverImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = img.closest('.feature-card');
+          if (card) {
+            card.classList.add('dismiss-hover');
           }
-        };
+        });
+      });
 
-        const hideCta = () => {
-          stickyCta.classList.remove('visible');
-        };
+      const featureCards = document.querySelectorAll('.feature-card');
+      featureCards.forEach(card => {
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('dismiss-hover');
+        });
+      });
 
-        const onScrollActivity = () => {
-          hideCta();
-          if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-          }
-          scrollTimeout = setTimeout(showCta, DELAY_MS);
-        };
-
-        window.addEventListener('touchstart', (e) => {
-          // If tapping the CTA link itself, do not hide or intercept
-          if (stickyCta.contains(e.target)) return;
-          isTouching = true;
-          hideCta();
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-        }, { passive: true });
-
-        window.addEventListener('touchmove', (e) => {
-          if (stickyCta.contains(e.target)) return;
-          isTouching = true;
-          hideCta();
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-        }, { passive: true });
-
-        window.addEventListener('touchend', (e) => {
-          if (stickyCta.contains(e.target)) return;
-          isTouching = false;
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(showCta, DELAY_MS);
-        }, { passive: true });
-
-        window.addEventListener('scroll', onScrollActivity, { passive: true });
-        window.addEventListener('wheel', onScrollActivity, { passive: true });
-
-        // Initial check if page is already scrolled on load
-        if (window.scrollY > 150) {
-          scrollTimeout = setTimeout(showCta, DELAY_MS);
-        }
+      const heroImg = document.querySelector('.hero-img');
+      if (heroImg) {
+        heroImg.addEventListener('click', () => {
+          heroImg.classList.add('dismiss-hover');
+        });
+        heroImg.addEventListener('mouseleave', () => {
+          heroImg.classList.remove('dismiss-hover');
+        });
       }
     })();
   </script>
