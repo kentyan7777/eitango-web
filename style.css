@@ -474,9 +474,12 @@ a {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.feature-card:not(.dismiss-hover):hover {
+.feature-card:not(.dismiss-hover):hover,
+.feature-card:not(.dismiss-hover).is-active {
   border-color: var(--card-hover-border);
   transform: translateY(-5px);
   box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
@@ -490,7 +493,9 @@ a {
 }
 
 .feature-card:not(.dismiss-hover):hover > h3,
-.feature-card:not(.dismiss-hover):hover > p {
+.feature-card:not(.dismiss-hover):hover > p,
+.feature-card:not(.dismiss-hover).is-active > h3,
+.feature-card:not(.dismiss-hover).is-active > p {
   opacity: 0.35;
   filter: blur(0.5px);
 }
@@ -515,7 +520,8 @@ a {
   background: rgba(15, 23, 42, 0.95);
 }
 
-.feature-card:not(.dismiss-hover):hover .feature-hover-image {
+.feature-card:not(.dismiss-hover):hover .feature-hover-image,
+.feature-card:not(.dismiss-hover).is-active .feature-hover-image {
   opacity: 1;
   transform: translate(0, -50%) scale(1.08);
   pointer-events: auto;
@@ -556,7 +562,8 @@ a {
   transform: translate(0, -25%) scale(0.85) rotate(8deg);
 }
 
-.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-1 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-1,
+.feature-card-stack:not(.dismiss-hover).is-active .feature-hover-image-1 {
   opacity: 1;
   transform: translate(0, -54%) scale(1.1) rotate(-8deg);
   transition-delay: 0ms;
@@ -564,7 +571,8 @@ a {
   cursor: pointer;
 }
 
-.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-2 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-2,
+.feature-card-stack:not(.dismiss-hover).is-active .feature-hover-image-2 {
   opacity: 1;
   transform: translate(-50%, -64%) scale(1.18) rotate(0deg);
   transition-delay: 700ms;
@@ -572,7 +580,8 @@ a {
   cursor: pointer;
 }
 
-.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-3 {
+.feature-card-stack:not(.dismiss-hover):hover .feature-hover-image-3,
+.feature-card-stack:not(.dismiss-hover).is-active .feature-hover-image-3 {
   opacity: 1;
   transform: translate(0, -54%) scale(1.1) rotate(8deg);
   transition-delay: 1400ms;

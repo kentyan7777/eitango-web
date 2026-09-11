@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=27">
+  <link rel="stylesheet" href="./style.css?v=28">
 </head>
 <body>
   <div class="glow-bg"></div>
@@ -379,29 +379,61 @@
         }
       }));
 
-      // Hover dismiss on image click
+      // Hover & Tap preview for feature cards
+      const featureCards = document.querySelectorAll('.feature-card');
       const featureHoverImages = document.querySelectorAll('.feature-hover-image');
+
       featureHoverImages.forEach(img => {
         img.addEventListener('click', (e) => {
           e.stopPropagation();
           const card = img.closest('.feature-card');
           if (card) {
+            card.classList.remove('is-active');
             card.classList.add('dismiss-hover');
           }
         });
       });
 
-      const featureCards = document.querySelectorAll('.feature-card');
       featureCards.forEach(card => {
-        card.addEventListener('mouseleave', () => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.feature-hover-image')) return;
+
+          const isAlreadyActive = card.classList.contains('is-active');
+          
+          featureCards.forEach(c => {
+            c.classList.remove('is-active');
+            c.classList.add('dismiss-hover');
+          });
+
+          if (!isAlreadyActive) {
+            card.classList.remove('dismiss-hover');
+            card.classList.add('is-active');
+          }
+        });
+
+        card.addEventListener('mouseenter', () => {
           card.classList.remove('dismiss-hover');
         });
+
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('dismiss-hover');
+          card.classList.remove('is-active');
+        });
+      });
+
+      // Tap outside cards to dismiss active previews
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.feature-card')) {
+          featureCards.forEach(c => {
+            c.classList.remove('is-active');
+          });
+        }
       });
 
       const heroImg = document.querySelector('.hero-img');
       if (heroImg) {
         heroImg.addEventListener('click', () => {
-          heroImg.classList.add('dismiss-hover');
+          heroImg.classList.toggle('dismiss-hover');
         });
         heroImg.addEventListener('mouseleave', () => {
           heroImg.classList.remove('dismiss-hover');
