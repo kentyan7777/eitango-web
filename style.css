@@ -851,6 +851,34 @@ a {
     grid-template-columns: 1fr;
   }
 
+  /* スマホでは画像をタップ不要で最初からカード末尾に常時表示する */
+  .feature-hover-image,
+  .feature-card-stack .feature-hover-image {
+    position: static;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    width: 100%;
+    max-width: 260px;
+    margin: 1.5rem auto 0;
+    display: block;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  /* 04の3枚重ね画像もスマホでは代表の1枚を表示 */
+  .feature-card-stack .feature-hover-image-2,
+  .feature-card-stack .feature-hover-image-3 {
+    display: none;
+  }
+
+  /* スマホでは文字を薄くボカす処理を解除 */
+  .feature-card > h3,
+  .feature-card > p {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
   .nav {
     position: fixed;
     right: 1.25rem;
