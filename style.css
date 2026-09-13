@@ -1857,3 +1857,36 @@ a {
   line-height: 1.55;
 }
 
+.ngsl-import-note {
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.35rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 12px;
+}
+
+.ngsl-note-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ngsl-note-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.ngsl-note-list li {
+  margin-bottom: 0.5rem;
+}
+
+.ngsl-note-list li:last-child {
+  margin-bottom: 0;
+}
