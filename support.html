@@ -457,27 +457,79 @@
         searchInput.addEventListener('input', renderList);
       }
 
+      // Pre-joined text cache for zero-lag instant copying
+      let cachedNgslText = null;
+      function getNgslText() {
+        if (!cachedNgslText && typeof NGSL_DATA !== 'undefined' && Array.isArray(NGSL_DATA)) {
+          cachedNgslText = NGSL_DATA.map(d => d.w).join('\n');
+        }
+        return cachedNgslText || '';
+      }
+
+      function copyTextFallback(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        ta.style.top = '0';
+        ta.setAttribute('readonly', '');
+        ta.contentEditable = 'true';
+        document.body.appendChild(ta);
+        
+        if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+          const range = document.createRange();
+          range.selectNodeContents(ta);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          ta.setSelectionRange(0, 999999);
+        } else {
+          ta.select();
+        }
+        
+        let successful = false;
+        try {
+          successful = document.execCommand('copy');
+        } catch (err) {
+          successful = false;
+        }
+        document.body.removeChild(ta);
+        return successful;
+      }
+
       // One-tap copy all NGSL words to clipboard
       const btnCopyNgsl = document.getElementById('btnCopyNgsl');
       const btnCopyNgslText = document.getElementById('btnCopyNgslText');
       if (btnCopyNgsl && btnCopyNgslText) {
         btnCopyNgsl.addEventListener('click', async () => {
-          const textToCopy = NGSL_DATA.map(d => d.w).join('\n');
           const originalText = btnCopyNgslText.textContent;
-          try {
-            await navigator.clipboard.writeText(textToCopy);
-            btnCopyNgslText.textContent = '✅ コピー完了！アプリで貼り付けてください';
-            setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 3500);
-          } catch(err) {
-            const ta = document.createElement('textarea');
-            ta.value = textToCopy;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-            btnCopyNgslText.textContent = '✅ コピー完了！アプリで貼り付けてください';
-            setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 3500);
+          btnCopyNgslText.textContent = '⏳ コピー中...';
+          
+          const textToCopy = getNgslText();
+          if (!textToCopy) {
+            btnCopyNgslText.textContent = '⚠️ 読み込み中。少々お待ちください';
+            setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 2000);
+            return;
           }
+
+          let copied = false;
+          if (navigator.clipboard && window.isSecureContext) {
+            try {
+              await navigator.clipboard.writeText(textToCopy);
+              copied = true;
+            } catch (err) {
+              copied = copyTextFallback(textToCopy);
+            }
+          } else {
+            copied = copyTextFallback(textToCopy);
+          }
+
+          if (copied) {
+            btnCopyNgslText.textContent = '✅ コピー完了（2,809語）！アプリで貼付';
+          } else {
+            btnCopyNgslText.textContent = '⚠️ 下のCSVダウンロードをご利用ください';
+          }
+          setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 3500);
         });
       }
 
