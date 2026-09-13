@@ -208,26 +208,33 @@
               </div>
             </div>
 
-            <p style="margin-bottom: 0.5rem; font-weight: 700; color: #fff;">
-              📂 公式単語リスト CSV ダウンロード（無料）
+            <p style="margin-bottom: 0.35rem; font-weight: 700; color: #fff;">
+              📂 アプリ取り込み対応・単語リスト CSV ダウンロード（英単語のみ）
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+              アプリ内の「設定 ➔ 単語を一括インポート」にそのままコピー＆ペーストできるよう、順位や数値を除外した「英単語のみ（1行1単語）」の形式でダウンロードできます。
             </p>
 
             <div class="ngsl-download-group">
-              <a href="./ngsl_wordlist_1.2.csv" download="ngsl_wordlist_1.2.csv" class="btn-download-primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                NGSL 1.2 CSV（2,809語）
+              <button type="button" id="btnCopyNgsl" class="btn-download-primary" style="border: none; cursor: pointer;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span id="btnCopyNgslText">📋 NGSL全2,809語をクリップボードにコピー</span>
+              </button>
+              <a href="./ngsl_wordlist_1.2.csv" download="ngsl_wordlist_1.2.csv" class="btn-download-sub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                NGSL CSV（2,809語）
               </a>
               <a href="./tsl_wordlist_1.2.csv" download="tsl_wordlist_1.2.csv" class="btn-download-sub">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                TSL TOEIC頻出語（1,250語）
+                TSL TOEIC（1,250語）
               </a>
               <a href="./bsl_wordlist_1.2.csv" download="bsl_wordlist_1.2.csv" class="btn-download-sub">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                BSL ビジネス英語（1,744語）
+                BSL ビジネス（1,744語）
               </a>
               <a href="./nawl_wordlist_1.0.csv" download="nawl_wordlist_1.0.csv" class="btn-download-sub">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                NAWL 学術・論文語（963語）
+                NAWL 学術（963語）
               </a>
             </div>
           </div>
@@ -400,6 +407,30 @@
 
       if (searchInput) {
         searchInput.addEventListener('input', renderList);
+      }
+
+      // One-tap copy all NGSL words to clipboard
+      const btnCopyNgsl = document.getElementById('btnCopyNgsl');
+      const btnCopyNgslText = document.getElementById('btnCopyNgslText');
+      if (btnCopyNgsl && btnCopyNgslText) {
+        btnCopyNgsl.addEventListener('click', async () => {
+          const textToCopy = NGSL_DATA.map(d => d.w).join('\n');
+          const originalText = btnCopyNgslText.textContent;
+          try {
+            await navigator.clipboard.writeText(textToCopy);
+            btnCopyNgslText.textContent = '✅ コピー完了！アプリで貼り付けてください';
+            setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 3500);
+          } catch(err) {
+            const ta = document.createElement('textarea');
+            ta.value = textToCopy;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            btnCopyNgslText.textContent = '✅ コピー完了！アプリで貼り付けてください';
+            setTimeout(() => { btnCopyNgslText.textContent = originalText; }, 3500);
+          }
+        });
       }
 
       renderList();
