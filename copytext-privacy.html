@@ -21,12 +21,21 @@
       <nav class="nav" id="nav">
         <a href="copytext-support.html">サポート</a>
         <a href="copytext-privacy.html">プライバシーポリシー</a>
+        <a href="copytext-tokuteisyotorihiki.html">特定商取引法に基づく表記</a>
       </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="ナビゲーションの切り替え">
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
   <main class="policy-page">
     <div class="container">
+      <a href="copytext-support.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        サポートページに戻る
+      </a>
+
       <article class="policy-card">
         <header class="policy-header">
           <h1 class="policy-title">プライバシーポリシー</h1>
@@ -86,5 +95,43 @@
       </article>
     </div>
   </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="brand-col">
+        <a class="brand" href="index.html">
+          <span class="brand-text">copytext</span><span class="dot">.</span>
+        </a>
+        <p class="muted">Safari専用 快適テキスト抽出＆ビューア</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="copytext-support.html">サポート</a>
+        <a href="copytext-privacy.html">プライバシーポリシー</a>
+        <a href="copytext-tokuteisyotorihiki.html">特定商取引法に基づく表記</a>
+      </nav>
+      <div class="support-info">
+        サポート連絡先: <a href="mailto:contact@eitango-app.com">contact@eitango-app.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      if (toggle && nav) {
+        toggle.addEventListener('click', ()=>{
+          nav.classList.toggle('open');
+          toggle.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+          if(nav.classList.contains('open')){
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+          }
+        }));
+      }
+    })();
+  </script>
 </body>
 </html>

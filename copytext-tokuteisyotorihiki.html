@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>特定商取引法に基づく表記 | copytext</title>
+  <meta name="description" content="Safari機能拡張「copytext」の特定商取引法に基づく表記です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css?v=13">
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-text">copytext</span><span class="dot">.</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="copytext-support.html">サポート</a>
+        <a href="copytext-privacy.html">プライバシーポリシー</a>
+        <a href="copytext-tokuteisyotorihiki.html">特定商取引法に基づく表記</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="ナビゲーションの切り替え">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="policy-page">
+    <div class="container">
+      <a href="copytext-support.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        サポートページに戻る
+      </a>
+
+      <article class="policy-card">
+        <header class="policy-header">
+          <h1 class="policy-title">特定商取引法に基づく表記</h1>
+        </header>
+
+        <div class="table-wrapper">
+          <table class="legal-table">
+            <tbody>
+              <tr>
+                <th>販売事業者名</th>
+                <td>川口 憲市（Kenichi Kawaguchi）</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>省略（※ご請求があった場合、遅滞なく開示いたします）</td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td>省略（※ご請求があった場合、遅滞なく開示いたします）</td>
+              </tr>
+              <tr>
+                <th>お問い合わせ先</th>
+                <td>
+                  <a href="mailto:contact@eitango-app.com" class="policy-link">contact@eitango-app.com</a>
+                  <span class="legal-note">※お電話での対応は受け付けておりません。お問い合わせは上記メールアドレスよりお願いいたします。</span>
+                </td>
+              </tr>
+              <tr>
+                <th>販売価格</th>
+                <td>無料（※有料オプションや課金アイテムが追加された場合は、購入手続きの際に画面に表示される金額となります）</td>
+              </tr>
+              <tr>
+                <th>販売価格以外に発生する料金</th>
+                <td>アプリの閲覧、ソフトウェアのダウンロード等に必要となるインターネット接続料金、通信料金等はお客様のご負担となります。</td>
+              </tr>
+              <tr>
+                <th>お支払方法</th>
+                <td>Apple ID（App Store）を利用したお支払い</td>
+              </tr>
+              <tr>
+                <th>代金の支払時期</th>
+                <td>ご購入手続き完了時において、Apple IDアカウントに即時課金されます。</td>
+              </tr>
+              <tr>
+                <th>サービスの提供時期</th>
+                <td>ダウンロード・決済手続き完了後、直ちにご利用いただけます。</td>
+              </tr>
+              <tr>
+                <th>返品・キャンセルについて</th>
+                <td>デジタルコンテンツの特性上、ご購入後のお客様都合による返品、キャンセル、および返金はお受けできません。</td>
+              </tr>
+              <tr>
+                <th>動作環境</th>
+                <td>iOS、iPadOS、macOSのSafari機能拡張が動作する環境（詳細はApp Storeのダウンロードページに記載）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <footer class="policy-meta">
+          制定日: 2026年9月15日
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="brand-col">
+        <a class="brand" href="index.html">
+          <span class="brand-text">copytext</span><span class="dot">.</span>
+        </a>
+        <p class="muted">Safari専用 快適テキスト抽出＆ビューア</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="copytext-support.html">サポート</a>
+        <a href="copytext-privacy.html">プライバシーポリシー</a>
+        <a href="copytext-tokuteisyotorihiki.html">特定商取引法に基づく表記</a>
+      </nav>
+      <div class="support-info">
+        サポート連絡先: <a href="mailto:contact@eitango-app.com">contact@eitango-app.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      if (toggle && nav) {
+        toggle.addEventListener('click', ()=>{
+          nav.classList.toggle('open');
+          toggle.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+          if(nav.classList.contains('open')){
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+          }
+        }));
+      }
+    })();
+  </script>
+</body>
+</html>
